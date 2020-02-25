@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xs-12">
+      <br />
+      <h4>Product List - Amazon </h4>
+      <br />
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" [ngStyle] = "{color:'magenta'}">Product Name</th>
+            <th scope="col" [ngStyle] = "{color:'magenta'}">Quantity</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let product of products">
+          <tr>
+            <td [ngStyle]="{color:'blue'}">{{product.product}}</td>
+            <td [ngStyle]="{color:'blue'}">{{product.quantity}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Input Field-->
+      <input
+        placeholder="Enter Product Name"
+        class="form-control my-2"
+        type="text"
+        [(ngModel)]="newProduct"
+      />
+
+      <input
+        placeholder="Enter Quantity"
+        class="form-control my-2"
+        type="text"
+        [(ngModel)]="newQuantity"
+      />
+
+      <button class="btn btn-sm btn-primary my-2 px-2" (click)="onClick()">
+        Add Product
+      </button>
+    </div>
+  </div>
+</div>
